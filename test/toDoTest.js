@@ -9,4 +9,12 @@ describe('create a toDo', function() {
       expect(toDo).to.be.an.instanceof(ToDo);
     });
   });
+
+  describe('store and retrieve task string', function () {
+    it('should store a task string', function () {
+      var toDo = new ToDo();
+      toDo.add("Buy some milk");
+      
+    });
+  });
 });

@@ -1,6 +1,10 @@
 'use strict';
 
 function ToDo(){
+  var taskArray = [];
+};
+
+function add(){
 
 };
 
