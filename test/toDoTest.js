@@ -1,20 +1,22 @@
-var assert = require('chai').assert;
-var expect = require('chai').expect;
+var expect = require('chai').expect
+var assert = require('chai').assert
+// var assert = chai.assert;
+// var expect = chai.expect;
 var ToDo = require('../src/toDo.js');
+var ToDoList = require('../src/toDo.js');
 
-describe('create a toDo', function() {
-  describe('instantiation', function () {
-    it('should instantiate a toDo object', function () {
-      var toDo = new ToDo();
-      expect(toDo).to.be.an.instanceof(ToDo);
-    });
+describe("instantiate a todo", function() {
+  it('creates an instance of ToDo', function(){
+    var task = new ToDo();
+    expect(task).to.be.an.instanceof(ToDo);
   });
+});
 
-  describe('store and retrieve task string', function () {
-    it('should store a task string', function () {
-      var toDo = new ToDo();
-      toDo.add("Buy some milk");
-      
-    });
+
+describe("can add and retreive tasks in an array", function() {
+  it('adds a task to an array', function(){
+    var task = new ToDo();
+    task.add("Wash the bike");
+    expect(task.list).to.include('Wash the bike')
   });
 });
