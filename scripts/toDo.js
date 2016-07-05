@@ -3,5 +3,4 @@ function ToDo(task) {
   this.complete = false;
 }
 
-
 module.exports = ToDo;
