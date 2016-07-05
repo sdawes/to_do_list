@@ -1,13 +1,23 @@
+
+var app = require("http-server").createServer();
 var assert = require('assert');
+var Browser = require('zombie');
 
-describe('to do list app', function() {
+describe('title page', function() {
 
-
-  it('should show a title', function() {
-    assert.ok(this.browser.success);
-    assert.equal(this.browser.text('h1'), 'To Do List App');
+  before(function() {
+    server = app.listen(3000);
+    browser = new Browser({ site: 'http://localhost:3000' });
   });
 
-  
+  beforeEach(function(done) {
+    browser.visit('/', done);
+  });
 
+  it('has a h1 title', function() {
+    browser.assert.status(200);
+  });
+  it('displays a title', function() {
+    browser.assert.text('h1', 'To Do List App');
+  });
 });
