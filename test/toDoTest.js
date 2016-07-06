@@ -1,8 +1,8 @@
 var expect = require('chai').expect
 var assert = require('chai').assert
 
-var ToDo = require('../scripts/toDo.js');
-var ToDoList = require('../scripts/toDoList.js');
+var ToDo = require('../lib/modules/toDo.js');
+var ToDoList = require('../lib/modules/toDoList.js');
 
 describe("instantiate a todo", function() {
   it('creates an instance of ToDo', function(){

@@ -14,9 +14,10 @@ describe('title page', function() {
     browser.visit('/', done);
   });
 
-  it('has a h1 title', function() {
+  it('is available as a page', function() {
     browser.assert.status(200);
   });
+  
   it('displays a title', function() {
     browser.assert.text('h1', 'To Do List App');
   });
