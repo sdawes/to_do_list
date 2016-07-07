@@ -1,3 +1,56 @@
 body {
-  background-color: lightblue;
+  background-color: #e3e3e3;
+  font-family: helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  /*border: 1px solid blue;*/
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  margin-right: 2%;
+}
+
+#submit {
+  margin-left: 2%;
+  border: none;
+  border-radius: 10px;
+  background-color: #fad6d6;
+  width: 20%;
+}
+
+.button_class{
+  margin-right: 2%;
+  border: none;
+  border-radius: 10px;
+  background-color: #d9fad6;
+  width: 25%;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
+  margin-bottom: 2%;
+}
+
+#task-input {
+  border-radius: 10px;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
 }

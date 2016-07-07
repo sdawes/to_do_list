@@ -8,7 +8,7 @@
 
 	  for (var i = 0; i < array.length; i++) {
 	    var print = print.concat(
-				'<li><div><button name="checkbox' + (i + 1) + '" onclick=activateChange(' + i + ')>Change Status</button> ' + array[i]._item + ' - ' + array[i].printStatus() + '</div></li>');
+				'<li><button class="button_class" name="checkbox' + (i + 1) + '" onclick=activateChange(' + i + ')>Change Status</button> ' + array[i]._item + ' - ' + array[i].printStatus() + '</li>');
 	  }
 
 	  return '<ul>' + print + '</ul>';
