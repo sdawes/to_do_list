@@ -6,20 +6,22 @@ var Browser = require('zombie');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 
+
 describe('home page', function() {
 
-	before(function() {
+	beforeEach(function() {
 		server.listen(3000);
 		browser = new Browser({ site: "http://localhost:3000"});
 	});
 
-	before(function(done) {
+	afterEach(function() {
+    // after each of the tests, close the server
+    server.close(3000);
+	})
+
+	beforeEach(function(done) {
 		browser.visit('/', done);
 	});
-
-
-
-
 
 	it('title attribute is To Do List', function() {
 		assert.equal(browser.text('title'), 'To Do List');
@@ -34,6 +36,19 @@ describe('home page', function() {
 	  browser.pressButton('Add to list');
 		assert.include(browser.text('ul'), 'phone grandma');
 		assert.include(browser.text('ul'), 'eat chocolate');
+	});
+
+	it('toDo starts with status not complete', function(){
+		browser.fill('task', 'phone grandma');
+	  browser.pressButton('Add to list');
+		assert.include(browser.text('ul'), 'not completed');
+	});
+
+	it('once checkbox is ticked, toDo has status complete', function(){
+		browser.fill('task', 'phone grandma');
+	  browser.pressButton('Add to list');
+		browser.check("checkbox1");
+		assert.notInclude(browser.text('ul'), 'not');
 	});
 
 });
