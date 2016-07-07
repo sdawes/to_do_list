@@ -1,5 +1,3 @@
-window.onload = function() {
-
 	var list = new List();
 
 	var updateList = function(){
@@ -13,23 +11,9 @@ window.onload = function() {
 		list.addItem(document.getElementById('task-input').value);
 		updateList()
 		document.getElementById('form').reset();
-		addCheckBoxListener();
 	};
 
-	// for (var i = 0; i < list.list.length; i++) {
-
-		// result.addEventListener('click', tickCheckBox(), false);
-	// }
-
-	function addCheckBoxListener(){
-		document.getElementById('tickbox').addEventListener('click', tickCheckBox, false);
-	};
-
-	function tickCheckBox(){
-		list.list[0].changeStatus();
+	function activateChange(itemIndex){
+		list.list[itemIndex].changeStatus();
 		updateList();
 	};
-
-
-
-};

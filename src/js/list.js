@@ -20,4 +20,3 @@
 	exports.List = List;
 
 })(this);
-

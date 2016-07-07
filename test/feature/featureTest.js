@@ -44,11 +44,14 @@ describe('home page', function() {
 		assert.include(browser.text('ul'), 'not completed');
 	});
 
-	it('once checkbox is ticked, toDo has status complete', function(){
-		browser.fill('task', 'phone grandma');
-	  browser.pressButton('Add to list');
-		browser.check("checkbox1");
-		assert.notInclude(browser.text('ul'), 'not');
-	});
+	it('once two checkboxes are ticked, both toDos have status complete', function(){
+        browser.fill('task', 'phone grandma');
+        browser.pressButton('Add to list');
+        browser.check("checkbox1");
+        browser.fill('task', 'wash hair');
+        browser.pressButton('Add to list');
+        browser.check("checkbox2");
+        assert.notInclude(browser.text('ul'), 'not');
+    });
 
 });
